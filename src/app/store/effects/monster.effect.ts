@@ -10,7 +10,9 @@ import {
   GET_MONSTERS,
   GetMonsters,
   GetMonstersSuccess,
-  GetMonstersFail
+  GetMonstersFail,
+  GET_MONSTERS_TYPE,
+  GetMonstersType
 } from "../actions/monster.action";
 
 @Injectable()
@@ -31,6 +33,19 @@ export class MonsterEffects {
           )
       )
     );
+
+  @Effect()
+  monstersOfType = this.actions.ofType(GET_MONSTERS_TYPE)
+    .pipe(
+      map((action: GetMonstersType) => action.monsterType),
+      switchMap(type => this.monsterService.ofType(type).pipe(
+        map(
+          monsters => new GetMonstersSuccess(monsters),
+          catchError(error => of(new GetMonstersFail(error)))
+        )
+      )
+    )
+  );
 
   constructor(
     private actions: Actions,

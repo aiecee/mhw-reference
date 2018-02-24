@@ -13,10 +13,15 @@ import * as fromModels from "../../models";
 })
 export class MonsterListComponent implements OnInit {
   monsters: Observable<fromModels.IMonster[]>;
+  searchTerm: string;
 
   constructor(private store: Store<fromStore.IAppState>) {}
 
   ngOnInit() {
     this.monsters = this.store.select(fromStore.monstersMonsters);
+  }
+
+  search() {
+    this.store.dispatch(new fromStore.GetMonsters(this.searchTerm));
   }
 }
