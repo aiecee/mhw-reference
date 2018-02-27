@@ -34,7 +34,12 @@ export class MonsterEffects {
           .load<fromModels.IMonster>(MONSTER_DEFINITIONS)
           .pipe(
             map(
-              monsters => new GetMonstersSuccess(_.values(monsters)),
+              monsters =>
+                new GetMonstersSuccess(
+                  _.values(monsters).filter(
+                    m => m.name.toLowerCase().indexOf(filter.toLowerCase()) >= 0
+                  )
+                ),
               catchError(error => of(new GetMonstersFail(error)))
             )
           )
