@@ -1,3 +1,3 @@
-import { MonsterService } from "./monster.service";
+import { DefinitionsService } from "./definitions.service";
 
-export const services = [MonsterService];
+export const services = [DefinitionsService];

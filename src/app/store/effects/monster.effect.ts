@@ -5,7 +5,8 @@ import { Effect, Actions } from "@ngrx/effects";
 import { of } from "rxjs/observable/of";
 import { map, switchMap, catchError } from "rxjs/operators";
 
-import { MonsterService } from "../../services/monster.service";
+import * as _ from "lodash";
+
 import {
   GET_MONSTERS,
   GetMonsters,
@@ -14,6 +15,12 @@ import {
   GET_MONSTERS_TYPE,
   GetMonstersType
 } from "../actions/monster.action";
+import {
+  DefinitionsService,
+  MONSTER_DEFINITIONS
+} from "../../services/definitions.service";
+
+import * as fromModels from "../../models";
 
 @Injectable()
 export class MonsterEffects {
@@ -23,32 +30,19 @@ export class MonsterEffects {
     .pipe(
       map((action: GetMonsters) => action.filter),
       switchMap(filter =>
-        this.monsterService
-          .get(filter)
+        this.defService
+          .load<fromModels.IMonster>(MONSTER_DEFINITIONS)
           .pipe(
             map(
-              monsters => new GetMonstersSuccess(monsters),
+              monsters => new GetMonstersSuccess(_.values(monsters)),
               catchError(error => of(new GetMonstersFail(error)))
             )
           )
       )
     );
 
-  @Effect()
-  monstersOfType = this.actions.ofType(GET_MONSTERS_TYPE)
-    .pipe(
-      map((action: GetMonstersType) => action.monsterType),
-      switchMap(type => this.monsterService.ofType(type).pipe(
-        map(
-          monsters => new GetMonstersSuccess(monsters),
-          catchError(error => of(new GetMonstersFail(error)))
-        )
-      )
-    )
-  );
-
   constructor(
     private actions: Actions,
-    private monsterService: MonsterService
+    private defService: DefinitionsService
   ) {}
 }

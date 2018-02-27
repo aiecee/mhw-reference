@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 
 import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
@@ -7,15 +8,17 @@ import { EffectsModule } from "@ngrx/effects";
 import { AppComponent } from "./app.component";
 import * as fromStore from "./store";
 import * as fromServices from "./services";
-import { MonsterListComponent } from './components/monster-list/monster-list.component';
-import { MonsterComponent } from './components/monster/monster.component';
+import { FileSaveComponent } from "./components/file-save/file-save.component";
+import { LargeMonstersModule } from "./large-monsters/large-monsters.module";
 
 @NgModule({
-  declarations: [AppComponent, MonsterListComponent, MonsterComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     StoreModule.forRoot(fromStore.reducers),
-    EffectsModule.forRoot(fromStore.effects)
+    EffectsModule.forRoot(fromStore.effects),
+    LargeMonstersModule
   ],
   providers: [...fromServices.services],
   bootstrap: [AppComponent]

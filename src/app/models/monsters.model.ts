@@ -1,3 +1,5 @@
+import { IDefinition } from "./definition.model";
+
 export interface IWeakness {
   name: string;
   value: number;
@@ -9,15 +11,13 @@ export interface IWeaknesses {
   ailments: IWeakness[];
 }
 
-export interface IMonster {
-  name: string;
-  description: string;
-  img: string;
+export interface IMonster extends IDefinition {
   type: string;
   weaknesses: IWeaknesses[];
 }
 
 export const anjanath: IMonster = {
+  id: "0",
   name: "Anjanath",
   description: "",
   img: "assets/images/MHW-Anjanath_Icon.png",
@@ -44,6 +44,7 @@ export const anjanath: IMonster = {
 };
 
 export const azureRathalos: IMonster = {
+  id: "1",
   name: "Azure Rathalos",
   description: "",
   img: "assets/images/MHW-Azure_Rathalos_Icon.png",
@@ -70,6 +71,7 @@ export const azureRathalos: IMonster = {
 };
 
 export const barroth: IMonster = {
+  id: "2",
   name: "Barroth",
   description: "",
   img: "assets/images/MHW-Barroth_Icon.png",
@@ -113,6 +115,7 @@ export const barroth: IMonster = {
 };
 
 export const bazelgeuse: IMonster = {
+  id: "3",
   name: "Bazelgeuse",
   description: "",
   img: "assets/images/MHW-Bazelgeuse_Icon.png",
@@ -139,6 +142,7 @@ export const bazelgeuse: IMonster = {
 };
 
 export const blackDiablos: IMonster = {
+  id: "4",
   name: "Black Diablos",
   description: "",
   img: "assets/images/MHW-Black_Diablos_Icon.png",
@@ -165,6 +169,7 @@ export const blackDiablos: IMonster = {
 };
 
 export const diablos: IMonster = {
+  id: "5",
   name: "Diablos",
   description: "",
   img: "assets/images/MHW-Diablos_Icon.png",
@@ -191,6 +196,7 @@ export const diablos: IMonster = {
 };
 
 export const dodogama: IMonster = {
+  id: "6",
   name: "Dodogama",
   description: "",
   img: "assets/images/MHW-Dodogama_Icon.png",
@@ -217,6 +223,7 @@ export const dodogama: IMonster = {
 };
 
 export const greatGirros: IMonster = {
+  id: "7",
   name: "Great Girros",
   description: "",
   img: "assets/images/MHW-Great_Girros_Icon.png",
@@ -243,6 +250,7 @@ export const greatGirros: IMonster = {
 };
 
 export const greatJagras: IMonster = {
+  id: "8",
   name: "Great Jagras",
   description: "",
   img: "assets/images/MHW-Great_Jagras_Icon.png",
@@ -269,6 +277,7 @@ export const greatJagras: IMonster = {
 };
 
 export const jyuratodus: IMonster = {
+  id: "9",
   name: "Jyuratodus",
   description: "",
   img: "assets/images/MHW-Jyuratodus_Icon.png",
@@ -312,6 +321,7 @@ export const jyuratodus: IMonster = {
 };
 
 export const kirin: IMonster = {
+  id: "10",
   name: "Kirin",
   description: "",
   img: "assets/images/MHW-Kirin_Icon.png",
@@ -338,6 +348,7 @@ export const kirin: IMonster = {
 };
 
 export const kuluYaKu: IMonster = {
+  id: "11",
   name: "Kulu-Ya-Ku",
   description: "",
   img: "assets/images/MHW-Kulu-Ya-Ku_Icon.png",
@@ -364,6 +375,7 @@ export const kuluYaKu: IMonster = {
 };
 
 export const kushalaDaora: IMonster = {
+  id: "12",
   name: "Kushala Daora",
   description: "",
   img: "assets/images/MHW-Kushala_Daora_Icon.png",
@@ -390,6 +402,7 @@ export const kushalaDaora: IMonster = {
 };
 
 export const lavasioth: IMonster = {
+  id: "13",
   name: "Lavasioth",
   description: "",
   img: "assets/images/MHW-Lavasioth_Icon.png",
@@ -433,6 +446,7 @@ export const lavasioth: IMonster = {
 };
 
 export const legiana: IMonster = {
+  id: "14",
   name: "Legiana",
   description: "",
   img: "assets/images/MHW-Legiana_Icon.png",
@@ -459,6 +473,7 @@ export const legiana: IMonster = {
 };
 
 export const nergigante: IMonster = {
+  id: "15",
   name: "Nergigante",
   description: "",
   img: "assets/images/MHW-Nergigante_Icon.png",
@@ -485,6 +500,7 @@ export const nergigante: IMonster = {
 };
 
 export const odogaron: IMonster = {
+  id: "16",
   name: "Odogaron",
   description: "",
   img: "assets/images/MHW-Odogaron_Icon.png",
@@ -511,6 +527,7 @@ export const odogaron: IMonster = {
 };
 
 export const paolumu: IMonster = {
+  id: "17",
   name: "Paolumu",
   description: "",
   img: "assets/images/MHW-Paolumu_Icon.png",
@@ -537,6 +554,7 @@ export const paolumu: IMonster = {
 };
 
 export const pinkRathian: IMonster = {
+  id: "18",
   name: "Pink Rathian",
   description: "",
   img: "assets/images/MHW-Pink_Rathian_Icon.png",
@@ -563,6 +581,7 @@ export const pinkRathian: IMonster = {
 };
 
 export const pukeiPukei: IMonster = {
+  id: "19",
   name: "Pukei-Pukei",
   description: "",
   img: "assets/images/MHW-Pukei-Pukei_Icon.png",
@@ -589,6 +608,7 @@ export const pukeiPukei: IMonster = {
 };
 
 export const radobaan: IMonster = {
+  id: "20",
   name: "Radobaan",
   description: "",
   img: "assets/images/MHW-Radobaan_Icon.png",
@@ -615,6 +635,7 @@ export const radobaan: IMonster = {
 };
 
 export const rathalos: IMonster = {
+  id: "21",
   name: "Rathalos",
   description: "",
   img: "assets/images/MHW-Rathalos_Icon.png",
@@ -641,6 +662,7 @@ export const rathalos: IMonster = {
 };
 
 export const rathian: IMonster = {
+  id: "22",
   name: "Rathian",
   description: "",
   img: "assets/images/MHW-Rathian_Icon.png",
@@ -667,6 +689,7 @@ export const rathian: IMonster = {
 };
 
 export const teostra: IMonster = {
+  id: "23",
   name: "Teostra",
   description: "",
   img: "assets/images/MHW-Teostra_Icon.png",
@@ -693,6 +716,7 @@ export const teostra: IMonster = {
 };
 
 export const tobiKadachi: IMonster = {
+  id: "24",
   name: "Tobi-Kadachi",
   description: "",
   img: "assets/images/MHW-Tobi-Kadachi_Icon.png",
@@ -719,6 +743,7 @@ export const tobiKadachi: IMonster = {
 };
 
 export const tzitziYaKu: IMonster = {
+  id: "25",
   name: "Tzitzi-Ya-Ku",
   description: "",
   img: "assets/images/MHW-Tzitzi-Ya-Ku_Icon.png",
@@ -745,6 +770,7 @@ export const tzitziYaKu: IMonster = {
 };
 
 export const uragaan: IMonster = {
+  id: "26",
   name: "Uragaan",
   description: "",
   img: "assets/images/MHW-Uragaan_Icon.png",
@@ -771,6 +797,7 @@ export const uragaan: IMonster = {
 };
 
 export const vaalHazak: IMonster = {
+  id: "27",
   name: "Vaal Hazak",
   description: "",
   img: "assets/images/MHW-Vaal_Hazak_Icon.png",
@@ -797,6 +824,7 @@ export const vaalHazak: IMonster = {
 };
 
 export const xenoJiiva: IMonster = {
+  id: "28",
   name: "Xeno'jiiva",
   description: "",
   img: "assets/images/MHW-Xeno-jiiva_Icon.png",
@@ -823,6 +851,7 @@ export const xenoJiiva: IMonster = {
 };
 
 export const zorahMagdaros: IMonster = {
+  id: "29",
   name: "Zorah Magdaros",
   description: "",
   img: "assets/images/MHW-Zorah_Magdaros_Icon.png",

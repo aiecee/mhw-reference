@@ -1,5 +1,6 @@
 import { Action } from "@ngrx/store";
 import { IMonster } from "../../models/monsters.model";
+import { IDefinitionDictionary } from "../../models/definition.model";
 
 export const GET_MONSTERS = "[Monsters] Get Monsters";
 export const GET_MONSTERS_SUCCESS = "[Monsters] Get All Success";
@@ -13,7 +14,7 @@ export class GetMonsters implements Action {
 
 export class GetMonstersType implements Action {
   readonly type = GET_MONSTERS_TYPE;
-  constructor(public monsterType: string){}
+  constructor(public monsterType: string) {}
 }
 
 export class GetMonstersSuccess implements Action {
@@ -26,4 +27,8 @@ export class GetMonstersFail implements Action {
   constructor(public error: any) {}
 }
 
-export type MonsterActions = GetMonsters | GetMonstersType | GetMonstersSuccess | GetMonstersFail;
+export type MonsterActions =
+  | GetMonsters
+  | GetMonstersType
+  | GetMonstersSuccess
+  | GetMonstersFail;

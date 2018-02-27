@@ -1,0 +1,54 @@
+{
+  "0": {
+    "id": "0",
+    "name": "Anjanath",
+    "description": "",
+    "img": "assets/images/MHW-Anjanath_Icon.png",
+    "type": "Brute Wyvern",
+    "weaknesses": [
+      {
+        "form": "Normal",
+        "elemental": [
+          { "name": "Dragon", "value": 1 },
+          { "name": "Fire", "value": 0 },
+          { "name": "Ice", "value": 2 },
+          { "name": "Thunder", "value": 1 },
+          { "name": "Water", "value": 3 }
+        ],
+        "ailments": [
+          { "name": "Blast", "value": 1 },
+          { "name": "Paralysis", "value": 2 },
+          { "name": "Poison", "value": 2 },
+          { "name": "Sleep", "value": 2 },
+          { "name": "Stun", "value": 2 }
+        ]
+      }
+    ]
+  },
+  "1": {
+    "id": "1",
+    "name": "Azure Rathalos",
+    "description": "",
+    "img": "assets/images/MHW-Azure_Rathalos_Icon.png",
+    "type": "Flying Wyvern",
+    "weaknesses": [
+      {
+        "form": "Normal",
+        "elemental": [
+          { "name": "Dragon", "value": 3 },
+          { "name": "Fire", "value": 0 },
+          { "name": "Ice", "value": 2 },
+          { "name": "Thunder", "value": 1 },
+          { "name": "Water", "value": 1 }
+        ],
+        "ailments": [
+          { "name": "Blast", "value": 1 },
+          { "name": "Paralysis", "value": 2 },
+          { "name": "Poison", "value": 1 },
+          { "name": "Sleep", "value": 2 },
+          { "name": "Stun", "value": 2 }
+        ]
+      }
+    ]
+  }
+}
