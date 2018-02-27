@@ -1,5 +1,5 @@
-import { MonsterEffects } from "./monster.effect";
+import { MonstersEffects } from "./monsters.effect";
 
-export const effects: any[] = [MonsterEffects];
+export const effects: any[] = [MonstersEffects];
 
-export * from "./monster.effect";
+export * from "./monsters.effect";

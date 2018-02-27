@@ -1,0 +1,45 @@
+<div class="tile is-ancestor">
+    <div class="tile is-parent is-4">
+        <article class="tile is-child notification is-light">
+            <p class="title">{{ (monster | async)?.name }}</p>
+            <p class="subtitle">{{ (monster | async)?.type }}</p>
+            <figure class="image is-square">
+                <img [src]="(monster | async)?.img">
+            </figure>
+        </article>
+    </div>
+    <div class="tile" *ngFor="let weakness of (monster | async)?.weaknesses">
+        <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification is-light">
+                <p class="title">Elemental - {{ weakness.form }}</p>
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let state of weakness.elemental">
+                            <td>{{ state.name }}</td>
+                            <td>
+                                <span *ngFor="let i of range(state.value)" class="icon has-text-warning">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article class="tile is-child notification is-light">
+                <p class="title">Ailments - {{ weakness.form }}</p>
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let state of weakness.ailments">
+                            <td>{{ state.name }}</td>
+                            <td>
+                                <span *ngFor="let i of range(state.value)" class="icon has-text-warning">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+    </div>
+</div>

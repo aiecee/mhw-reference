@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 import * as fromModels from "../../models";
 
@@ -10,7 +11,7 @@ import * as fromModels from "../../models";
         <div class="media">
           <div class="media-left">
             <figure class="image is-128x128">
-              <img [src]=monster.img [alt]=monster.name >
+              <img [src]="monster.img" [alt]="monster.name" >
             </figure>
           </div>
           <div class="media-content" style="overflow-y: hidden">
@@ -25,11 +26,11 @@ import * as fromModels from "../../models";
 export class MonsterComponent implements OnInit {
   @Input() monster: fromModels.IMonster;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
   onClick() {
-    console.log("Clicked: " + this.monster.name);
+    this.router.navigate(["monsters", this.monster.id]);
   }
 }

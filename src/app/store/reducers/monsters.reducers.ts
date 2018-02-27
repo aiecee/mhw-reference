@@ -1,11 +1,11 @@
 import { IMonster } from "../../models/monsters.model";
 import {
-  MonsterActions,
+  MonstersActions,
   GET_MONSTERS_SUCCESS,
   GetMonstersSuccess,
   GET_MONSTERS_FAIL,
   GetMonstersFail
-} from "../actions/monster.action";
+} from "../actions/monsters.action";
 
 export interface IMonsterState {
   monsters: IMonster[];
@@ -19,7 +19,7 @@ export const initialState: IMonsterState = {
 
 export function reduceMonsters(
   state = initialState,
-  action: MonsterActions
+  action: MonstersActions
 ): IMonsterState {
   switch (action.type) {
     case GET_MONSTERS_SUCCESS: {

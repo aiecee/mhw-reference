@@ -4,10 +4,6 @@ import "rxjs/add/operator/do";
 
 import { Store } from "@ngrx/store";
 
-import * as fromStore from "./store";
-import { monsters } from "./store/reducers/monster.reducers";
-import { GetMonsters } from "./store";
-
 @Component({
   selector: "app-root",
   template: `
@@ -25,17 +21,13 @@ import { GetMonsters } from "./store";
   </section>
   <section class="section">
     <div class="container">
-      <app-monster-list></app-monster-list>
+      <router-outlet></router-outlet>
     </div>
   </section>
   `
 })
 export class AppComponent implements OnInit {
-  title = "app";
+  constructor() {}
 
-  constructor(private store: Store<fromStore.IAppState>) {}
-
-  ngOnInit(): void {
-    this.store.dispatch(new GetMonsters(""));
-  }
+  ngOnInit(): void {}
 }

@@ -10,6 +10,7 @@ import * as fromStore from "./store";
 import * as fromServices from "./services";
 import { FileSaveComponent } from "./components/file-save/file-save.component";
 import { LargeMonstersModule } from "./large-monsters/large-monsters.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import { LargeMonstersModule } from "./large-monsters/large-monsters.module";
     HttpClientModule,
     StoreModule.forRoot(fromStore.reducers),
     EffectsModule.forRoot(fromStore.effects),
-    LargeMonstersModule
+    LargeMonstersModule,
+    AppRoutingModule
   ],
   providers: [...fromServices.services],
   bootstrap: [AppComponent]

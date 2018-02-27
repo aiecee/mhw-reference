@@ -16,7 +16,7 @@ import * as fromModels from "../../models";
   </div>
   <div class="columns is-multiline">
     <div class="column is-one-quarter" *ngFor="let monster of (monsters | async)">
-      <app-monster [monster]=monster ></app-monster>
+      <app-monster [monster]="monster" ></app-monster>
     </div>
   </div>
 `

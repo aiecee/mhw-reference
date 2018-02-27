@@ -1,6 +1,6 @@
 import { ActionReducerMap, createSelector } from "@ngrx/store";
 
-import * as fromMonsters from "./monster.reducers";
+import * as fromMonsters from "./monsters.reducers";
 
 export interface IAppState {
   monsters: fromMonsters.IMonsterState;
