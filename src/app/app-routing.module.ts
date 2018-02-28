@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { environment } from "../environments/environment";
 
 const routes: Routes = [
   { path: "", redirectTo: "/monsters", pathMatch: "full" },
@@ -9,7 +10,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      enableTracing: true
+      //enableTracing: !environment.production,
+      useHash: true
     })
   ],
   exports: [RouterModule]

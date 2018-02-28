@@ -13,6 +13,11 @@ export interface IDefinitionService {
   load<TDefinition extends IDefinition>(
     path: string
   ): Observable<IDefinitionDictionary<TDefinition>>;
+
+  byId<TDefinition extends IDefinition>(
+    path: string,
+    id: string
+  ): Observable<TDefinition>;
 }
 
 export const MONSTER_DEFINITIONS =
@@ -26,5 +31,14 @@ export class DefinitionsService implements IDefinitionService {
     path: string
   ): Observable<IDefinitionDictionary<TDefinition>> {
     return this.http.get<IDefinitionDictionary<TDefinition>>(path);
+  }
+
+  byId<TDefinition extends IDefinition>(
+    path: string,
+    id: string
+  ): Observable<TDefinition> {
+    return this.http
+      .get<IDefinitionDictionary<TDefinition>>(path)
+      .pipe(map(dict => dict[id]));
   }
 }

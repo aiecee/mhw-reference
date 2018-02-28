@@ -12,13 +12,13 @@ export interface IMonsterState {
   error: any;
 }
 
-export const initialState: IMonsterState = {
+export const initialMonstersState: IMonsterState = {
   monsters: [],
   error: null
 };
 
 export function reduceMonsters(
-  state = initialState,
+  state = initialMonstersState,
   action: MonstersActions
 ): IMonsterState {
   switch (action.type) {

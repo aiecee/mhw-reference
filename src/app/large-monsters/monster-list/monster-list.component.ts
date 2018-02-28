@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs/Observable";
+import { Title } from "@angular/platform-browser";
 
 import { Store } from "@ngrx/store";
 
@@ -25,9 +26,14 @@ export class MonsterListComponent implements OnInit {
   monsters: Observable<fromModels.IMonster[]>;
   searchTerm: string;
 
-  constructor(private store: Store<fromStore.IAppState>) {}
+  constructor(
+    private store: Store<fromStore.IAppState>,
+    private title: Title
+  ) {}
 
   ngOnInit() {
+    window.scroll(0, 0);
+    this.title.setTitle("Monster Hunter Reference - Monsters");
     this.monsters = this.store.select(fromStore.monstersMonsters);
     this.store.dispatch(new fromStore.GetMonsters(""));
   }

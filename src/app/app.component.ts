@@ -1,8 +1,11 @@
 import { Component, OnInit } from "@angular/core";
+import { Router, NavigationEnd } from "@angular/router";
 
 import "rxjs/add/operator/do";
 
 import { Store } from "@ngrx/store";
+
+declare var gtag: Function;
 
 @Component({
   selector: "app-root",
@@ -27,7 +30,15 @@ import { Store } from "@ngrx/store";
   `
 })
 export class AppComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        gtag("config", "UA-114913099-1", {
+          page_location: event.urlAfterRedirects
+        });
+      }
+    });
+  }
 
   ngOnInit(): void {}
 }
